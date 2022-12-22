@@ -24,6 +24,21 @@ public class Queue {
     }
 
     /*
+     * create a method name as dequeue.
+     * Remove item from the beginning of the list.
+     */
+    public int dequeue() {
+        int data = front.data;
+        front = front.next;
+        if (isEmpty()) {
+            rear = null;
+        }
+        currentSize--;
+        System.out.println(data + " removed from the queue");
+        return data;
+    }
+
+    /*
      * create enqueue method and pass the parameter
      * Add data to the end of the list.
      */
@@ -44,8 +59,12 @@ public class Queue {
     public static void main(String[] args) {
         Queue queue = new Queue();
         queue.enqueue(56);
+        queue.dequeue();
         queue.enqueue(30);
+        queue.dequeue();
         queue.enqueue(70);
+        queue.dequeue();
+        System.out.println("queue is empty");
     }
 
 }
